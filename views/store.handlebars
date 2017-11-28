@@ -1,0 +1,68 @@
+<div class="mainContent">
+    <div class="siteHeader">
+        <h1>Available Stores</h1>
+    </div>
+    <div>
+        <form><button type="submit" formaction="/" class="navLink">Back</button></form>
+        <form action="/saveStore" method="POST">
+            <table class="contentTable" >
+                <tr>
+                    <td colspan=4 align="center" class="contentTableHeader">
+                        New Store
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="bottom">
+                        <label for="name">Store Name</label>
+                    </td>
+                    <td valign="bottom">
+                         <label for="address">Address</label>
+                    </td>
+                     <td valign="bottom">
+                         <label for="zip">Zipcode</label>
+                    </td>
+                    <td rowspan="2">
+                        <button type="submit" class="navLink">Create</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <input id="name" name="name" required=true size = "20" />
+                    </td>
+                    <td valign="top">
+                        <input id="address" name="address" required=true size = "50" />
+                    </td>
+                    <td valign="top">
+                        <input id="zip" name="zip" required=true size = "5" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div>
+        <table class="contentTable">
+            <tr>
+                <th width="250px" class="contentTableHeader">
+                    Store Name
+                </th>
+                <th width="450px" class="contentTableHeader">
+                    Location
+                </th>
+            </tr>
+            {{#each stores}}
+            
+            <tr>
+                <td>
+                    <a href="/viewStore/{{this._id}}" class="noLinkStyle">
+                    {{this.name}}
+                    </a>
+                </td>
+                <td>
+                    {{this.address}} {{this.zip}}
+                </td>
+            </tr>
+            
+            {{/each}}        
+        </table>
+    </div>
+</div>

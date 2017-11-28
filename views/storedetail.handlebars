@@ -1,0 +1,77 @@
+<div class="mainContent">
+    <div class="siteHeader">
+        <h2>{{store.name}}</h2>
+        <h3>Location: {{store.address}} {{store.zip}}</h3>
+    </div>
+    <div>
+        
+        <form><button type="submit" formaction="/viewStores" class="navLink">Back</button></form>
+        
+        <form action="/saveStore/{{store._id}}" method="POST">
+            <table class="contentTable" >
+                <tr>
+                    <td colspan=4 align="center" class="contentTableHeader">
+                        New Item
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="bottom">
+                        <label for="name">Item Name</label>
+                    </td>
+                    <td valign="bottom">
+                         <label for="quantity">Qty</label>
+                    </td>
+                     <td valign="bottom">
+                         <label for="description">Description</label>
+                    </td>
+                    <td rowspan="2">
+                        <button type="submit" class="navLink">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <input id="name" name="name" required=true size = "40" />
+                    </td>
+                    <td valign="top">
+                        <input id="quantity" name="quantity" required=true size = "3" />
+                    </td>
+                    <td valign="top">
+                        <input id="description" name="description" required=true size = "50" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div>
+        
+        <table class="contentTable">
+            <tr>
+                <th width="250px" class="contentTableHeader">
+                    Item Name
+                </th>
+                <th width="100px" class="contentTableHeader">
+                    Qty
+                </th>
+                <th width="450px" class="contentTableHeader">
+                    Description
+                </th>
+            </tr>
+            {{#each store.items}}
+            
+            <tr>
+                <td>
+                   
+                    {{this.name}}
+                </td>
+                <td align="center">
+                    {{this.quantity}} 
+                </td>
+                <td>
+                    {{this.description}} 
+                </td>
+            </tr>
+            
+            {{/each}}        
+        </table>
+    </div>
+</div>

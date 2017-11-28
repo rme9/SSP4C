@@ -9,7 +9,10 @@
   "author": "Your Name Here",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.14.0",
-    "express-handlebars": "^3.0.0"
+    "body-parser": "^1.18.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   }
 }

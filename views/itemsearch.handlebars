@@ -1,0 +1,98 @@
+<div class="mainContent">
+    <div class="siteHeader">
+        <h1>Item Search</h1>
+    </div>
+    <div>
+        
+        <form><button type="submit" formaction="/" class="navLink">Back</button></form>
+        
+        <form action="/search" method="POST">
+            <table class="contentTable" >
+                  <tr>
+                    <td valign="bottom">
+                        <label for="name">Item Name</label>
+                    </td>
+                    <td valign="bottom">
+                        <label for="zipcode">Zipcode</label>
+                    </td>
+                    <td valign="bottom">
+                        <label for="city">City</label>
+                    </td>
+                    <td valign="bottom">
+                        <label for="state">St</label>
+                    </td>
+                    <td valign="bottom">
+                        <label for="radius">Radius</label>
+                    </td>
+                    <td valign="bottom">
+                        <label for="age">Max Age (in Days)</label>
+                    </td>
+                    <td rowspan="2">
+                        <button type="submit" class="navLink">Search</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <input id="name" name="name" required=true size="40" />
+                    </td>
+                    <td valign="top">
+                        <input id="zipcode" name="zipcode" size="5" />
+                    </td>
+                    <td valign="top">
+                        <input id="city" name="city" size="15" />
+                    </td>
+                    <td valign="top">
+                        <input id="state" name="state" size="2" />
+                    </td>
+                    <td valign="top">
+                        <input id="radius" name="radius" size="2" />
+                    </td>
+                    <td valign="top">
+                        <input id="age" name="age" size="2" />
+                    </td>
+                    
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div>
+        
+        <table class="contentTable">
+            <tr>
+                <th colspan="4" class="contentTableHeader">{{itemSearched}}</th>
+            </tr>
+            <tr>
+                <th width="250px" class="contentTableHeader">
+                    Store Name
+                </th>
+                <th width="400px" class="contentTableHeader">
+                    Location
+                </th>
+                <th width="100px" class="contentTableHeader">
+                    Qty
+                </th>
+                <th width="450px" class="contentTableHeader">
+                    Description
+                </th>
+            </tr>
+            {{#each stores}}
+            
+            <tr>
+                <td>
+                    {{this.name}}
+                </td>
+                <td>
+                    {{this.location}}
+                </td>
+                <td align="center">
+                    {{this.quantity}} 
+                </td>
+                <td>
+                    {{this.description}} 
+                </td>
+            </tr>
+            
+            {{/each}}        
+        </table>
+    </div>
+</div>
