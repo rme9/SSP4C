@@ -27,7 +27,7 @@ app.get('/viewStores', function(req, res){
 	});
 });
 
-let stres; // Used for McHackery becuase this is doing something wierd
+let stres; // Used for McHackery because this is doing something wierd
 app.get('/viewStore/:id', function(req, res){
 		storeService.getStoresbyId(req.params.id).then(function(result){
 			if(result.length > 0)
